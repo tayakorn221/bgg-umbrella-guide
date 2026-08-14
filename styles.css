@@ -583,6 +583,98 @@ tbody th {
   color: var(--wind);
 }
 
+.rival-models {
+  margin-top: clamp(22px, 4vw, 36px);
+  padding-top: clamp(24px, 4vw, 40px);
+  border-top: 1px solid var(--line);
+}
+
+.rival-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.46fr) minmax(280px, 0.54fr);
+  gap: 18px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.rival-intro h3 {
+  font-size: clamp(1.7rem, 3.6vw, 3rem);
+}
+
+.rival-intro p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.rival-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.rival-signal {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  min-height: 210px;
+  padding: 18px;
+  border: 1px solid color-mix(in oklch, var(--line), transparent 18%);
+  border-radius: var(--radius);
+  background: color-mix(in oklch, var(--surface), var(--soft) 20%);
+}
+
+.rival-signal svg {
+  width: 24px;
+  height: 24px;
+  color: var(--leaf);
+}
+
+.rival-signal h4 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.08rem;
+  line-height: 1.24;
+}
+
+.rival-signal p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.rival-table {
+  margin-top: 0;
+}
+
+.rival-table table {
+  min-width: 1180px;
+}
+
+.rival-table th:first-child {
+  width: 180px;
+}
+
+.rival-table td {
+  min-width: 170px;
+}
+
+.evidence-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  margin: 0 4px 4px 0;
+  padding: 3px 8px;
+  border: 1px solid color-mix(in oklch, var(--leaf), white 52%);
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--soft), white 35%);
+  color: var(--leaf);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 .competitor-verdict {
   display: grid;
   grid-template-columns: minmax(180px, 0.32fr) 1fr;
@@ -681,8 +773,13 @@ tbody th {
   }
 
   .competitor-grid,
-  .competitor-verdict {
+  .competitor-verdict,
+  .rival-intro {
     grid-template-columns: 1fr;
+  }
+
+  .rival-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .competitor-card {
@@ -719,6 +816,14 @@ tbody th {
   .elite-item strong {
     grid-column: 2;
     justify-self: start;
+  }
+
+  .rival-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rival-signal {
+    min-height: auto;
   }
 
   .site-footer {
