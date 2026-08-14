@@ -643,6 +643,114 @@ tbody th {
   font-size: 0.94rem;
 }
 
+.rival-gallery-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 6px 0 12px;
+}
+
+.rival-gallery-heading h4 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.14rem;
+  line-height: 1.25;
+}
+
+.rival-gallery-heading p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.rival-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 20px;
+}
+
+.rival-link-card {
+  display: grid;
+  grid-template-rows: auto min-content min-content minmax(36px, auto) min-content;
+  gap: 8px;
+  min-width: 0;
+  min-height: 312px;
+  padding: 10px;
+  border: 1px solid color-mix(in oklch, var(--line), transparent 14%);
+  border-radius: var(--radius);
+  background: color-mix(in oklch, var(--surface), var(--soft) 12%);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.rival-link-card:hover,
+.rival-link-card:focus-visible {
+  border-color: color-mix(in oklch, var(--leaf), white 35%);
+  box-shadow: 0 16px 34px color-mix(in oklch, var(--ink), transparent 90%);
+  transform: translateY(-2px);
+}
+
+.rival-link-card:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--rain), white 25%);
+  outline-offset: 3px;
+}
+
+.rival-link-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: 150px;
+  padding: 12px;
+  border-radius: 6px;
+  background: color-mix(in oklch, white, var(--soft) 16%);
+  object-fit: contain;
+}
+
+.rival-brand {
+  color: var(--muted);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.rival-link-card strong {
+  font-family: var(--font-heading);
+  font-size: 0.96rem;
+  line-height: 1.22;
+}
+
+.rival-link-card small {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.rival-link-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  margin-top: auto;
+  padding: 5px 10px;
+  border: 1px solid color-mix(in oklch, var(--leaf), white 52%);
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--soft), white 48%);
+  color: var(--leaf);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+}
+
 .rival-table {
   margin-top: 0;
 }
@@ -653,6 +761,18 @@ tbody th {
 
 .rival-table th:first-child {
   width: 180px;
+}
+
+.rival-table th a {
+  color: var(--leaf);
+  font-weight: 800;
+  text-decoration-color: color-mix(in oklch, var(--leaf), transparent 35%);
+  text-decoration-thickness: 1px;
+}
+
+.rival-table th a:hover,
+.rival-table th a:focus-visible {
+  color: var(--sun-dark);
 }
 
 .rival-table td {
@@ -782,6 +902,10 @@ tbody th {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .rival-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .competitor-card {
     min-height: auto;
   }
@@ -820,6 +944,19 @@ tbody th {
 
   .rival-summary-grid {
     grid-template-columns: 1fr;
+  }
+
+  .rival-gallery-heading {
+    display: grid;
+    gap: 6px;
+  }
+
+  .rival-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .rival-link-card {
+    min-height: auto;
   }
 
   .rival-signal {
