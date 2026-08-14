@@ -492,6 +492,118 @@ tbody th {
   white-space: nowrap;
 }
 
+.competitor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.competitor-card {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  min-height: 360px;
+  padding: clamp(20px, 3vw, 30px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, color-mix(in oklch, var(--accent), white 86%), transparent 48%),
+    var(--surface);
+}
+
+.competitor-card.namiko {
+  --accent: var(--coral);
+}
+
+.competitor-card.wpc {
+  --accent: var(--sun);
+}
+
+.competitor-card.knirps {
+  --accent: var(--rain);
+}
+
+.competitor-card.blunt {
+  --accent: var(--wind);
+}
+
+.competitor-head {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.competitor-logo {
+  display: grid;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 1px solid color-mix(in oklch, var(--accent), var(--ink) 30%);
+  background: color-mix(in oklch, var(--accent), white 70%);
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.competitor-card h3 {
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.competitor-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.competitor-facts {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.competitor-facts div {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 10px;
+  padding-top: 9px;
+  border-top: 1px solid color-mix(in oklch, var(--line), transparent 30%);
+}
+
+.competitor-facts dt {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.competitor-facts dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.wind-tag {
+  color: var(--wind);
+}
+
+.competitor-verdict {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.32fr) 1fr;
+  gap: 18px;
+  align-items: start;
+  margin-top: 18px;
+  padding: 22px;
+  border: 1px solid color-mix(in oklch, var(--ink), transparent 78%);
+  border-radius: var(--radius);
+  background: color-mix(in oklch, var(--soft), white 40%);
+}
+
+.competitor-verdict h3 {
+  font-size: 1.4rem;
+}
+
+.competitor-verdict p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .callout {
   display: grid;
   grid-template-columns: 38px 1fr;
@@ -565,6 +677,15 @@ tbody th {
   }
 
   .verdict-panel {
+    min-height: auto;
+  }
+
+  .competitor-grid,
+  .competitor-verdict {
+    grid-template-columns: 1fr;
+  }
+
+  .competitor-card {
     min-height: auto;
   }
 }
