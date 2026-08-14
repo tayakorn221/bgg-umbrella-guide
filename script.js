@@ -42,10 +42,13 @@ const meters = {
 const cards = document.querySelectorAll(".product-card");
 
 function setMode(mode) {
-  const recommendation = recommendations[mode] || recommendations.sun;
+  const selectedMode = recommendations[mode] ? mode : "sun";
+  const recommendation = recommendations[selectedMode];
 
   buttons.forEach((button) => {
-    button.classList.toggle("is-active", button.dataset.mode === mode);
+    const isSelected = button.dataset.mode === selectedMode;
+    button.classList.toggle("is-active", isSelected);
+    button.setAttribute("aria-pressed", String(isSelected));
   });
 
   title.textContent = recommendation.title;

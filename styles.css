@@ -103,7 +103,13 @@ button {
 }
 
 .top-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding-inline: 6px;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .top-nav a:hover {
@@ -180,7 +186,7 @@ h1 {
   background: var(--surface);
   color: var(--ink);
   cursor: pointer;
-  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  transition: transform 180ms ease, border-color 180ms ease;
 }
 
 .mode-button svg {
@@ -197,6 +203,12 @@ h1 {
   border-color: var(--ink);
   background: var(--ink);
   color: var(--paper);
+}
+
+.mode-button[aria-pressed="true"] {
+  border-color: #183322;
+  background: #183322;
+  color: #f8faee;
 }
 
 .verdict-panel {
