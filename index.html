@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="ตารางเปรียบเทียบร่ม BGG รุ่น AT0060, AT0068, AT0070 และรุ่นเทพที่ควรดูเพิ่ม สำหรับกันแดด UV ฝน ลม และการพกพา">
+    <meta property="og:title" content="BGG Umbrella Guide: เลือกร่มกันแดด/UV ให้ตรงงาน">
+    <meta property="og:description" content="สรุปรุ่น BGG ที่น่าซื้อ แยกตามกัน UV, ลมแรง, พกเบา, หน้าร่มใหญ่ และความคุ้มค่า">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#eff7ef">
+    <title>BGG Umbrella Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="กลับไปด้านบน">
+        <span class="brand-mark">BGG</span>
+        <span>Umbrella Guide</span>
+      </a>
+      <nav class="top-nav" aria-label="ส่วนหลักของหน้า">
+        <a href="#winners">เลือกเร็ว</a>
+        <a href="#compare">ตารางเทียบ</a>
+        <a href="#elite">รุ่นเทพ</a>
+        <a href="#sources">แหล่งข้อมูล</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="decision-board" aria-labelledby="page-title">
+        <div class="decision-copy">
+          <p class="eyebrow">อัปเดตข้อมูล: 14 ส.ค. 2026</p>
+          <h1 id="page-title">เลือกร่ม BGG ให้ตรงแดด ฝน ลม และน้ำหนักที่คุณยอมแบก</h1>
+          <p class="lede">
+            สรุปจากรุ่นที่คุยกัน: AT0060, AT0068, AT0070 และรุ่นที่สเปกโดดกว่าในแต่ละสาย
+            โดยแยก “ข้อมูลสเปก” ออกจาก “ข้อสรุปเชิงใช้งาน” เพื่อแชร์ให้เพื่อนตัดสินใจเร็วขึ้น
+          </p>
+          <div class="quick-actions" aria-label="ตัวกรองคำแนะนำ">
+            <button class="mode-button is-active" type="button" data-mode="sun">
+              <i data-lucide="sun"></i>
+              กันแดด/UV
+            </button>
+            <button class="mode-button" type="button" data-mode="carry">
+              <i data-lucide="briefcase"></i>
+              พกเบา
+            </button>
+            <button class="mode-button" type="button" data-mode="rain">
+              <i data-lucide="cloud-rain"></i>
+              ฝน/แห้งไว
+            </button>
+            <button class="mode-button" type="button" data-mode="wind">
+              <i data-lucide="wind"></i>
+              ลมแรง
+            </button>
+            <button class="mode-button" type="button" data-mode="value">
+              <i data-lucide="badge-dollar-sign"></i>
+              คุ้มค่า
+            </button>
+          </div>
+        </div>
+
+        <aside class="verdict-panel" aria-live="polite">
+          <p class="panel-label">คำตอบเร็ว</p>
+          <h2 id="verdict-title">AT0070 คือคำตอบที่สมดุลสุดสำหรับกันแดด/UV</h2>
+          <p id="verdict-body">
+            ได้ UPF50+, หน้าร่ม 24 นิ้ว/106 ซม. และน้ำหนักราว 250 กรัม จึงบังได้กว้างกว่า AT0060 แต่ยังเบากว่า AT0068 มาก
+          </p>
+          <div class="verdict-meter" aria-label="คะแนนตามโจทย์ที่เลือก">
+            <span>AT0060</span><meter id="meter-at0060" min="0" max="5" value="4"></meter>
+            <span>AT0068</span><meter id="meter-at0068" min="0" max="5" value="2.5"></meter>
+            <span>AT0070</span><meter id="meter-at0070" min="0" max="5" value="5"></meter>
+          </div>
+        </aside>
+      </section>
+
+      <section id="winners" class="section winners" aria-labelledby="winners-title">
+        <div class="section-kicker">เลือกเร็ว</div>
+        <div class="section-heading">
+          <h2 id="winners-title">ถ้าต้องซื้อวันนี้</h2>
+          <p>ไม่ต้องอ่านทั้งหมดก็เลือกได้จากโจทย์ใช้งานจริง</p>
+        </div>
+        <div class="winner-grid">
+          <article class="winner-tile">
+            <i data-lucide="shield-check"></i>
+            <h3>แดด/UV จริงจัง</h3>
+            <p><strong>AT0070</strong> มาก่อน เพราะ UPF50+ และหน้าร่มใหญ่กว่า AT0060</p>
+          </article>
+          <article class="winner-tile">
+            <i data-lucide="feather"></i>
+            <h3>พกทุกวัน</h3>
+            <p><strong>AT0060</strong> เบาสุดในสามตัวหลัก 210 กรัม พับสั้น 26.5 ซม.</p>
+          </article>
+          <article class="winner-tile">
+            <i data-lucide="cloud-rain-wind"></i>
+            <h3>หน้าฝน</h3>
+            <p><strong>AT0068</strong> เหมาะกับฝน ลม และการเก็บเร็วมากกว่าเรื่อง UV</p>
+          </article>
+          <article class="winner-tile">
+            <i data-lucide="maximize"></i>
+            <h3>บังตัวเยอะ</h3>
+            <p><strong>AT0077</strong> ควรเข้ารอบ ถ้ารับน้ำหนัก 510 กรัมได้</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section primary-models" aria-labelledby="primary-title">
+        <div class="section-kicker">สามตัวหลัก</div>
+        <div class="section-heading">
+          <h2 id="primary-title">AT0060 vs AT0068 vs AT0070</h2>
+          <p>การ์ดด้านล่างไฮไลต์ตามตัวกรองที่เลือกไว้ด้านบน</p>
+        </div>
+        <div class="product-grid" id="product-grid">
+          <article class="product-card" data-model="at0060">
+            <div class="product-image">
+              <img src="https://shoplineimg.com/64d3918581fd6c0054e15a58/68400ae3fcdbfb000ad4fdab/800x.jpg" alt="BGG Air Umbrella Auto รุ่น AT0060 สีดำ">
+            </div>
+            <div class="product-content">
+              <p class="tag">เบาสุดในกลุ่มหลัก</p>
+              <h3>AT0060 Air Umbrella Auto</h3>
+              <p>ร่มอัตโนมัติ UPF50 ที่เหมาะกับการพกทุกวัน กันแดดดี และน้ำหนักเบาจนไม่เป็นภาระ</p>
+              <dl class="spec-list">
+                <div><dt>UV</dt><dd>UPF50 / UV100%</dd></div>
+                <div><dt>กาง</dt><dd>96 ซม. / 21 นิ้ว</dd></div>
+                <div><dt>หนัก</dt><dd>210 กรัม</dd></div>
+                <div><dt>พับ</dt><dd>26.5 ซม.</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="product-card" data-model="at0068">
+            <div class="product-image">
+              <img src="https://img.meepshop.com/FhFZmaztY4FFTgGLlWj67BlrL_yvuDYPbBu81ERr5uY/w%3A1200/Z3M6Ly9pbWcubWVlcGNsb3VkLmNvbS9tZWVwc2hvcC9iZGNiMGVjNS1iYzM0LTQ1ZmUtYTZkNy1iMmZjMzdlZDQ0ZDcvZmlsZXMvM2NjOGM5NTMtZjVlYi00NmM0LWFjYTMtNDgzZGE2YmY1NmQ2LmpwZw" alt="BGG Quick-fold One Move Auto Fold umbrella product image">
+            </div>
+            <div class="product-content">
+              <p class="tag rain-tag">ฝน/ลมเด่นกว่าแดด</p>
+              <h3>AT0068 Quick-fold Fast Dry</h3>
+              <p>เลือกเมื่ออยากได้ร่มออโต้ที่ต้านลม แห้งเร็ว และเก็บไว เหมาะหน้าฝนมากกว่า UV จริงจัง</p>
+              <dl class="spec-list">
+                <div><dt>UV</dt><dd>UV protection ไม่เห็น UPF ชัด</dd></div>
+                <div><dt>กาง</dt><dd>104 ซม. / 23 นิ้ว</dd></div>
+                <div><dt>หนัก</dt><dd>420 กรัม</dd></div>
+                <div><dt>โครง</dt><dd>8 ก้าน / fiberglass</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="product-card is-featured" data-model="at0070">
+            <div class="product-image">
+              <img src="https://down-tw.img.susercontent.com/file/tw-11134207-7ra0h-mdjx6ck3wfz773" alt="BGG Air Umbrella Auto Pro24 รุ่น AT0070">
+            </div>
+            <div class="product-content">
+              <p class="tag sun-tag">คำแนะนำหลัก</p>
+              <h3>AT0070 Air Auto Pro24</h3>
+              <p>ตัวสมดุลสุด: UPF50+, หน้าร่ม 24 นิ้ว, กันน้ำ C6 และยังหนักเพียงประมาณ 250 กรัม</p>
+              <dl class="spec-list">
+                <div><dt>UV</dt><dd>UPF50+ / UV100%</dd></div>
+                <div><dt>กาง</dt><dd>106 ซม. / 24 นิ้ว</dd></div>
+                <div><dt>หนัก</dt><dd>250 กรัม</dd></div>
+                <div><dt>ผ้า</dt><dd>C6 water-repellent</dd></div>
+              </dl>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="compare" class="section compare-section" aria-labelledby="compare-title">
+        <div class="section-kicker">ตารางเทียบ</div>
+        <div class="section-heading">
+          <h2 id="compare-title">ทุกประเด็นที่มีผลกับการซื้อ</h2>
+          <p>ใช้ตารางนี้เช็กเหตุผลละเอียดก่อนส่งลิงก์ให้เพื่อน</p>
+        </div>
+        <div class="table-wrap" role="region" aria-label="ตารางเปรียบเทียบร่ม BGG" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>ประเด็น</th>
+                <th>AT0060</th>
+                <th>AT0068</th>
+                <th>AT0070</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>บทบาท</th>
+                <td>ร่มพกกันแดดเบา</td>
+                <td>ร่มฝน/ลม/เก็บเร็ว</td>
+                <td>ร่มกันแดดตัวหลักแบบสมดุล</td>
+              </tr>
+              <tr>
+                <th>กัน UV</th>
+                <td><strong>UPF50 / UV100%</strong></td>
+                <td>UV protection แต่ไม่เห็น UPF ชัด</td>
+                <td><strong>UPF50+ / UV100%</strong></td>
+              </tr>
+              <tr>
+                <th>พื้นที่เงา</th>
+                <td>96 ซม.</td>
+                <td>104 ซม.</td>
+                <td><strong>106 ซม.</strong></td>
+              </tr>
+              <tr>
+                <th>น้ำหนัก</th>
+                <td><strong>210 กรัม</strong></td>
+                <td>420 กรัม</td>
+                <td>250 กรัม</td>
+              </tr>
+              <tr>
+                <th>ฝน/แห้งเร็ว</th>
+                <td>ใช้ได้ แต่ไม่ใช่จุดขายหลัก</td>
+                <td><strong>เด่น: 190T high-density / fast dry</strong></td>
+                <td>เด่น: C6 water-repellent</td>
+              </tr>
+              <tr>
+                <th>ลมแรง</th>
+                <td>พอใช้ตามร่มน้ำหนักเบา</td>
+                <td><strong>เด่นสุดในสามตัวหลัก</strong></td>
+                <td>พอใช้ แต่หน้าร่มใหญ่รับลมมากขึ้น</td>
+              </tr>
+              <tr>
+                <th>ข้อเสีย</th>
+                <td>หน้าร่มเล็กสุด</td>
+                <td>หนักสุด และ UV ไม่ชัดเท่าอีกสองตัว</td>
+                <td>แพงกว่า AT0060 และสเปกบางจุดต้องเช็กร้านก่อนซื้อ</td>
+              </tr>
+              <tr>
+                <th>คำตัดสิน</th>
+                <td>คุ้มถ้าพกทุกวัน</td>
+                <td>ดีถ้าฝน/ลมสำคัญกว่าแดด</td>
+                <td><strong>ตัวเลือกหลักถ้าเน้นแดด/UV</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section score-section" aria-labelledby="score-title">
+        <div class="section-kicker">คะแนนใช้งาน</div>
+        <div class="section-heading">
+          <h2 id="score-title">อ่านเป็นเรดาร์แบบบ้าน ๆ</h2>
+          <p>คะแนน 1-5 เป็นการตีความจากสเปก ไม่ใช่ผลทดสอบในแล็บ</p>
+        </div>
+        <div class="score-grid">
+          <article class="score-card">
+            <h3>AT0060</h3>
+            <div class="score-row"><span>UV</span><b style="--score: 4.4"></b><em>4.4</em></div>
+            <div class="score-row"><span>พกพา</span><b style="--score: 5"></b><em>5.0</em></div>
+            <div class="score-row"><span>ฝน</span><b style="--score: 3.2"></b><em>3.2</em></div>
+            <div class="score-row"><span>ลม</span><b style="--score: 3"></b><em>3.0</em></div>
+          </article>
+          <article class="score-card">
+            <h3>AT0068</h3>
+            <div class="score-row"><span>UV</span><b style="--score: 2.6"></b><em>2.6</em></div>
+            <div class="score-row"><span>พกพา</span><b style="--score: 2.3"></b><em>2.3</em></div>
+            <div class="score-row"><span>ฝน</span><b style="--score: 5"></b><em>5.0</em></div>
+            <div class="score-row"><span>ลม</span><b style="--score: 4.8"></b><em>4.8</em></div>
+          </article>
+          <article class="score-card">
+            <h3>AT0070</h3>
+            <div class="score-row"><span>UV</span><b style="--score: 5"></b><em>5.0</em></div>
+            <div class="score-row"><span>พกพา</span><b style="--score: 4.4"></b><em>4.4</em></div>
+            <div class="score-row"><span>ฝน</span><b style="--score: 4.5"></b><em>4.5</em></div>
+            <div class="score-row"><span>ลม</span><b style="--score: 3.6"></b><em>3.6</em></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="elite" class="section elite-section" aria-labelledby="elite-title">
+        <div class="section-kicker">รุ่นเทพที่ควรดูเพิ่ม</div>
+        <div class="section-heading">
+          <h2 id="elite-title">ถ้าอยากไปให้สุดในแต่ละสาย</h2>
+          <p>ไม่จำเป็นต้องซื้อแพงสุด ให้เลือกสายที่ตรงกับชีวิตประจำวัน</p>
+        </div>
+        <div class="elite-list">
+          <article class="elite-item">
+            <span class="rank">01</span>
+            <div>
+              <h3>AT0072 Storm Breaker</h3>
+              <p>สายลมแรง: UPF50 / UV100% และชูโครง 16 ribs / double fiberglass มากกว่า AT0068</p>
+            </div>
+            <strong>ลม</strong>
+          </article>
+          <article class="elite-item">
+            <span class="rank">02</span>
+            <div>
+              <h3>AT0077 UPF50+ 27" Big Size</h3>
+              <p>สายบังตัว: หน้าร่ม 122 ซม. เหมาะเดินกลางแดดนาน แต่หนักราว 510 กรัม</p>
+            </div>
+            <strong>เงาใหญ่</strong>
+          </article>
+          <article class="elite-item">
+            <span class="rank">03</span>
+            <div>
+              <h3>FM1158 Air 2 Plus 24"</h3>
+              <p>สายเบาแต่ใหญ่: 24 นิ้ว, 108 ซม., ประมาณ 139 กรัม แต่เป็นร่มเปิด-ปิดมือ</p>
+            </div>
+            <strong>เบา</strong>
+          </article>
+          <article class="elite-item">
+            <span class="rank">04</span>
+            <div>
+              <h3>FM1161 Anchor Folding</h3>
+              <p>สายเล็กเบา: 129 กรัม, พับ 20 ซม., ผ้า 270T และ UV100% แต่หน้าร่มเล็กกว่า</p>
+            </div>
+            <strong>เล็ก</strong>
+          </article>
+          <article class="elite-item">
+            <span class="rank">05</span>
+            <div>
+              <h3>WA107565 34" Huge Size</h3>
+              <p>สายไม่แคร์พก: ร่มยาวใหญ่ กันแดด/ฝนได้เต็มกว่า แต่ไม่เหมาะใส่กระเป๋าทุกวัน</p>
+            </div>
+            <strong>ใหญ่สุด</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section caveat-section" aria-labelledby="caveat-title">
+        <div class="section-kicker">ข้อควรรู้เรื่อง UV</div>
+        <div class="section-heading">
+          <h2 id="caveat-title">UPF ชนะ 190T เมื่อคุยเรื่องกัน UV</h2>
+          <p>
+            190T บอกความหนาแน่นผ้า จึงช่วยให้แสงผ่านน้อยลงได้ แต่ไม่ได้บอกเปอร์เซ็นต์ UV โดยตรง
+            ถ้าเน้นผิว/ฝ้า/แดดจัด ให้ดูค่า UPF หรือผลทดสอบ UV cut ก่อนเสมอ
+          </p>
+        </div>
+        <div class="callout">
+          <i data-lucide="info"></i>
+          <p>
+            ต่อให้ร่มเคลม UV100% แสง UV ยังเข้าจากด้านข้างและแสงสะท้อนจากพื้นได้
+            ถ้าเดินกลางแดดนานควรใช้ร่วมกับหมวก แว่น และกันแดดบนผิวที่เปิดอยู่
+          </p>
+        </div>
+      </section>
+
+      <section id="sources" class="section sources" aria-labelledby="sources-title">
+        <div class="section-kicker">แหล่งข้อมูล</div>
+        <div class="section-heading">
+          <h2 id="sources-title">ลิงก์ที่ใช้ประกอบ</h2>
+          <p>ราคาและสต็อกเปลี่ยนได้ ควรเช็กหน้าร้านก่อนจ่ายเงิน</p>
+        </div>
+        <ul class="source-list">
+          <li><a href="https://www.bggumbrella.com/products/a5f10179-1f4c-43fe-bced-ed89a2b4dd2a" target="_blank" rel="noreferrer">BGG AT0060</a></li>
+          <li><a href="https://www.bggumbrella.com/products/00a88b6a-3c70-4225-b39e-b7f13412caf9" target="_blank" rel="noreferrer">BGG AT0068 Quick-fold</a></li>
+          <li><a href="https://www.bggumbrella.com/products/c0660101-1b86-4247-8a5c-e0bcc0b9924f" target="_blank" rel="noreferrer">BGG AT0070 Air Auto Pro24</a></li>
+          <li><a href="https://www.decathlon.co.th/en-TH/p/bgg-laboratory-upf50-air-umbrella-auto-at0060-green-bgg-umbrella-33985782-0594-4ab6-bae9-8f26d6ae06ff.html" target="_blank" rel="noreferrer">Decathlon AT0060</a></li>
+          <li><a href="https://www.decathlon.co.th/en-TH/p/bgg-laboratory-air-auto-pro-upf50-water-repellent-at0070-navy-bgg-umbrella-40d2d3cb-8a8d-4654-af7c-8c0657691c39.html" target="_blank" rel="noreferrer">Decathlon AT0070</a></li>
+          <li><a href="https://www.skincancer.org/skin-cancer-prevention/sun-protection/sun-protective-clothing/" target="_blank" rel="noreferrer">Skin Cancer Foundation: UPF clothing</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>ทำไว้เป็น buyer guide ส่วนตัวสำหรับแชร์เพื่อน ไม่ใช่หน้าขายสินค้า</p>
+      <a href="#top">กลับขึ้นบน</a>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
