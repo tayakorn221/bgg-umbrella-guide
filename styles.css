@@ -531,6 +531,10 @@ tbody th {
   --accent: var(--sun);
 }
 
+.competitor-card.waterfront {
+  --accent: var(--leaf);
+}
+
 .competitor-card.knirps {
   --accent: var(--rain);
 }

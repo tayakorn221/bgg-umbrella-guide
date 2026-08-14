@@ -25,7 +25,7 @@ const contrastRatio = (foreground, background) => {
 
 assert.match(html, /id="competitors"/, "adds a competitors section anchor");
 
-for (const brand of ["NAMIKO", "Wpc.", "UVO", "Knirps", "BLUNT"]) {
+for (const brand of ["NAMIKO", "Wpc.", "UVO", "Knirps", "BLUNT", "Waterfront"]) {
   assert.match(html, new RegExp(brand.replace(".", "\\.")), `mentions ${brand}`);
 }
 
@@ -179,12 +179,15 @@ for (const model of [
   "BLUNT Metro UV",
   "BLUNT Classic UV",
   "BLUNT Sport / Sport UV",
+  "Waterfront COKAGE+ 2-Way",
+  "Waterfront ZENTENKOU 55cm",
+  "Waterfront POKEFLAT QUICK",
 ]) {
-  assert.match(html, new RegExp(model.replaceAll(".", "\\.")), `includes ${model}`);
+  assert.match(html, new RegExp(escapeRegExp(model)), `includes ${model}`);
 }
 
 const rivalCards = rivalSection.match(/<a class="rival-link-card"[\s\S]*?<\/a>/g) ?? [];
-assert.equal(rivalCards.length, 13, "shows one linked photo card per rival model");
+assert.equal(rivalCards.length, 16, "shows one linked photo card per rival model");
 
 for (const card of rivalCards) {
   assert.match(card, /data-rival-card/, "marks rival photo cards for visual checks");
@@ -210,16 +213,26 @@ for (const source of [
   "https://bluntumbrellas.com/products/blunt-metro",
   "https://bluntumbrellas.com/products/blunt-classic",
   "https://bluntumbrellas.com/products/blunt-sport",
+  "https://waterfront-umbrella.com/products/cokage_s255-0820_s255-0821",
+  "https://item.rakuten.co.jp/waterfront/s355-07/",
+  "https://item.rakuten.co.jp/waterfront/pokeflat_u355-1291/",
 ]) {
   assert.match(rivalSection, new RegExp(escapeRegExp(source)), `links rival source ${source}`);
 }
+
+assert.match(html, /https:\/\/www\.water-front\.co\.jp\/en\//, "links the Waterfront brand overview");
+assert.match(html, /https:\/\/cokageplus\.com\//, "links the COKAGE+ technical overview");
+assert.match(html, /5 แบรนด์/, "updates the competitor heading count");
+assert.match(html, /30 m\/s/, "includes Waterfront wind-test evidence");
+assert.match(html, /61%/, "includes Waterfront COKAGE+ heat-shield evidence");
+assert.match(html, /185g/, "includes Waterfront POKEFLAT QUICK weight evidence");
 
 assert.match(css, /\.rival-gallery/, "styles the rival product photo gallery");
 assert.match(css, /\.rival-link-card/, "styles each rival product link card");
 
 assert.doesNotMatch(html, /กันแดดเชิงหลักฐานชนะ AT0070/, "avoids overstating UVO as a whole-umbrella UV winner over AT0070");
 assert.match(html, /หลักฐานผ้ากัน UV แน่นกว่า AT0070/, "positions UVO as stronger fabric evidence rather than a total-product winner");
-assert.match(html, /ค่าทดสอบ UV ของ UVO\/Wpc\. IZA เป็นค่าผ้า/, "keeps fabric-state UV caveat near the competitor decision");
+assert.match(html, /UVO\/Wpc\. IZA\/Waterfront/, "keeps fabric-state UV caveat near the competitor decision");
 
 const bluntSportRow = html.match(/<tr>\s*<th><a href="https:\/\/bluntumbrellas\.com\/products\/blunt-sport"[\s\S]*?<\/tr>/)?.[0] ?? "";
 assert.ok(bluntSportRow, "keeps the BLUNT Sport comparison row");
