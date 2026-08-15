@@ -25,7 +25,7 @@ const contrastRatio = (foreground, background) => {
 
 assert.match(html, /id="competitors"/, "adds a competitors section anchor");
 
-for (const brand of ["NAMIKO", "Wpc.", "UVO", "Knirps", "BLUNT", "Waterfront"]) {
+for (const brand of ["NAMIKO", "Wpc.", "UVO", "Knirps", "BLUNT", "Waterfront", "INGU", "Pharmular", "Thai Sun Sport", "LAMPTAN", "Raindeer"]) {
   assert.match(html, new RegExp(brand.replace(".", "\\.")), `mentions ${brand}`);
 }
 
@@ -160,7 +160,9 @@ assert.doesNotMatch(html, /lucide@latest/, "pins the Lucide CDN dependency");
 assert.match(html, /lucide@1\.30\.0\/dist\/umd\/lucide\.min\.js/, "uses the pinned Lucide web package");
 
 assert.match(html, /id="rival-models"/, "adds a model-level rival comparison section");
+assert.match(html, /id="thai-rivals"/, "adds a Thai challenger comparison section");
 assert.match(css, /\.rival-table/, "styles the rival model comparison table");
+assert.match(css, /\.thai-rivals/, "styles the Thai challenger comparison section");
 
 const rivalSection = html.match(/<section id="rival-models"[\s\S]*?<\/section>/)?.[0] ?? "";
 assert.ok(rivalSection, "keeps a rival model comparison section");
@@ -182,12 +184,16 @@ for (const model of [
   "Waterfront COKAGE+ 2-Way",
   "Waterfront ZENTENKOU 55cm",
   "Waterfront POKEFLAT QUICK",
+  "INGU Umbrella UPF 50+",
+  "Pharmular UV Umbrella",
+  "Thai Sun Sport SSR0023",
+  "LAMPTAN Umbrella Fan",
 ]) {
   assert.match(html, new RegExp(escapeRegExp(model)), `includes ${model}`);
 }
 
 const rivalCards = rivalSection.match(/<a class="rival-link-card"[\s\S]*?<\/a>/g) ?? [];
-assert.equal(rivalCards.length, 16, "shows one linked photo card per rival model");
+assert.equal(rivalCards.length, 20, "shows one linked photo card per rival model");
 
 for (const card of rivalCards) {
   assert.match(card, /data-rival-card/, "marks rival photo cards for visual checks");
@@ -216,6 +222,10 @@ for (const source of [
   "https://waterfront-umbrella.com/products/cokage_s255-0820_s255-0821",
   "https://item.rakuten.co.jp/waterfront/s355-07/",
   "https://item.rakuten.co.jp/waterfront/pokeflat_u355-1291/",
+  "https://shop.line.me/%40inguskin/product/1003316186",
+  "https://pharmular.com/product/",
+  "https://www.homepro.co.th/p/888125100201",
+  "https://www.lamptan.co.th/products/umbrella-fan",
 ]) {
   assert.match(rivalSection, new RegExp(escapeRegExp(source)), `links rival source ${source}`);
 }
@@ -226,6 +236,12 @@ assert.match(html, /5 แบรนด์/, "updates the competitor heading count
 assert.match(html, /30 m\/s/, "includes Waterfront wind-test evidence");
 assert.match(html, /61%/, "includes Waterfront COKAGE+ heat-shield evidence");
 assert.match(html, /185g/, "includes Waterfront POKEFLAT QUICK weight evidence");
+assert.match(html, /99\.98%/, "includes INGU textile UV evidence");
+assert.match(html, /460 กรัม/, "includes INGU weight caveat");
+assert.match(html, /325 กรัม/, "includes Pharmular weight evidence");
+assert.match(html, /124 cm/, "includes Thai Sun Sport coverage evidence");
+assert.match(html, /2600 mAh/, "includes LAMPTAN battery evidence");
+assert.match(html, /Raindeer[\s\S]*watchlist/, "keeps Raindeer as a watchlist Thai fashion brand instead of overstating lab evidence");
 
 assert.match(css, /\.rival-gallery/, "styles the rival product photo gallery");
 assert.match(css, /\.rival-link-card/, "styles each rival product link card");

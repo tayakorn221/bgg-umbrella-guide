@@ -599,6 +599,74 @@ tbody th {
   color: var(--wind);
 }
 
+.thai-rivals {
+  margin-top: clamp(22px, 4vw, 36px);
+  padding-top: clamp(24px, 4vw, 40px);
+  border-top: 1px solid var(--line);
+}
+
+.thai-rivals-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(280px, 0.58fr);
+  gap: 18px;
+  align-items: end;
+  margin-bottom: 16px;
+}
+
+.thai-rivals-head h3 {
+  font-size: clamp(1.6rem, 3.4vw, 2.7rem);
+}
+
+.thai-rivals-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.thai-rival-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.thai-rival-card {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-width: 0;
+  min-height: 188px;
+  padding: 16px;
+  border: 1px solid color-mix(in oklch, var(--leaf), white 62%);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(145deg, color-mix(in oklch, var(--leaf), white 88%), transparent 52%),
+    color-mix(in oklch, var(--surface), var(--soft) 14%);
+}
+
+.thai-rival-card.muted {
+  border-color: color-mix(in oklch, var(--line), transparent 12%);
+  background: color-mix(in oklch, var(--surface), var(--soft) 24%);
+}
+
+.thai-rival-label {
+  color: var(--leaf);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.thai-rival-card h4 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.04rem;
+  line-height: 1.22;
+}
+
+.thai-rival-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .rival-models {
   margin-top: clamp(22px, 4vw, 36px);
   padding-top: clamp(24px, 4vw, 40px);
@@ -910,8 +978,13 @@ tbody th {
 
   .competitor-grid,
   .competitor-verdict,
-  .rival-intro {
+  .rival-intro,
+  .thai-rivals-head {
     grid-template-columns: 1fr;
+  }
+
+  .thai-rival-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .rival-summary-grid {
@@ -960,6 +1033,14 @@ tbody th {
 
   .rival-summary-grid {
     grid-template-columns: 1fr;
+  }
+
+  .thai-rival-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .thai-rival-card {
+    min-height: auto;
   }
 
   .rival-gallery-heading {
