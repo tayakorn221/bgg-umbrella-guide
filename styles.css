@@ -168,6 +168,18 @@ h1 {
   font-size: 1.08rem;
 }
 
+.price-context {
+  max-width: 74ch;
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in oklch, var(--sun), var(--line) 28%);
+  border-radius: var(--radius);
+  background: color-mix(in oklch, var(--sun), white 86%);
+  color: color-mix(in oklch, var(--ink), var(--sun-dark) 18%);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
 .quick-actions {
   display: flex;
   flex-wrap: wrap;
@@ -367,6 +379,22 @@ meter::-webkit-meter-optimum-value {
   font-size: 1.55rem;
 }
 
+.price-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  margin: 0 0 12px;
+  padding: 5px 10px;
+  border: 1px solid color-mix(in oklch, var(--sun), var(--ink) 18%);
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--sun), white 76%);
+  color: var(--sun-dark);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
 .rain-tag {
   color: var(--rain);
 }
@@ -492,6 +520,24 @@ tbody th {
 
 .elite-item p {
   margin: 6px 0 0;
+}
+
+.elite-price,
+.thai-rival-price {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 28px;
+  margin-top: 8px;
+  padding: 3px 9px;
+  border: 1px solid color-mix(in oklch, var(--sun), white 46%);
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--sun), white 82%);
+  color: var(--sun-dark);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .elite-item strong {
@@ -667,6 +713,10 @@ tbody th {
   line-height: 1.5;
 }
 
+.thai-rival-price {
+  margin-top: -2px;
+}
+
 .rival-models {
   margin-top: clamp(22px, 4vw, 36px);
   padding-top: clamp(24px, 4vw, 40px);
@@ -758,10 +808,10 @@ tbody th {
 
 .rival-link-card {
   display: grid;
-  grid-template-rows: auto min-content min-content minmax(36px, auto) min-content;
+  grid-template-rows: auto min-content min-content minmax(36px, auto) min-content min-content;
   gap: 8px;
   min-width: 0;
-  min-height: 312px;
+  min-height: 342px;
   padding: 10px;
   border: 1px solid color-mix(in oklch, var(--line), transparent 14%);
   border-radius: var(--radius);
@@ -817,6 +867,22 @@ tbody th {
   line-height: 1.35;
 }
 
+.rival-price {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 28px;
+  padding: 3px 9px;
+  border: 1px solid color-mix(in oklch, var(--sun), white 48%);
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--sun), white 82%);
+  color: var(--sun-dark);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
 .rival-link-label {
   display: inline-flex;
   align-items: center;
@@ -840,7 +906,7 @@ tbody th {
 }
 
 .rival-table table {
-  min-width: 1180px;
+  min-width: 1380px;
 }
 
 .rival-table th:first-child {
@@ -861,6 +927,13 @@ tbody th {
 
 .rival-table td {
   min-width: 170px;
+}
+
+.rival-table td[data-price-cell] {
+  min-width: 126px;
+  color: var(--sun-dark);
+  font-family: var(--font-heading);
+  font-weight: 800;
 }
 
 .evidence-chip {

@@ -203,7 +203,40 @@ for (const card of rivalCards) {
   assert.match(card, /<img\b[^>]+src="https?:\/\//, "uses a real product image on each rival card");
   assert.match(card, /<img\b[^>]+alt="[^"]{8,}"/, "gives each rival image useful alt text");
   assert.match(card, /loading="lazy"/, "lazy-loads rival product images");
+  assert.match(card, /<span class="rival-price" data-price-card>[^<]*฿[^<]*<\/span>/, "shows each rival model price in Thai baht");
 }
+
+const primaryPriceBadges = html.match(/<p class="price-pill" data-price-card>[^<]*฿[^<]*<\/p>/g) ?? [];
+assert.equal(primaryPriceBadges.length, 3, "shows Thai-baht prices on the three primary BGG cards");
+
+const elitePriceBadges = html.match(/<span class="elite-price" data-price-note>[^<]*฿[^<]*<\/span>/g) ?? [];
+assert.equal(elitePriceBadges.length, 5, "shows Thai-baht prices on all elite BGG picks");
+
+const rivalPriceCells = rivalSection.match(/<td data-price-cell>[^<]*฿[\s\S]*?<\/td>/g) ?? [];
+assert.equal(rivalPriceCells.length, 20, "adds a Thai-baht price column to every rival comparison row");
+
+assert.match(html, /ราคาที่เช็กล่าสุด:\s*15 ส\.ค\. 2026/, "states the price check date");
+assert.match(html, /เรตแปลงโดยประมาณ:\s*JPY 1 ≈ ฿0\.208/, "states the JPY conversion rate used for baht prices");
+assert.match(html, /EUR 1 ≈ ฿38\.316/, "states the EUR conversion rate used for baht prices");
+assert.match(html, /USD 1 ≈ ฿33\.083/, "states the USD conversion rate used for baht prices");
+
+for (const expectedPrice of [
+  "฿611",
+  "฿687",
+  "฿990",
+  "฿890",
+  "฿590",
+  "฿650",
+  "ประมาณ ฿1,716",
+  "ประมาณ ฿3,937",
+]) {
+  assert.match(html, new RegExp(escapeRegExp(expectedPrice)), `keeps visible baht price ${expectedPrice}`);
+}
+
+assert.match(css, /\.price-pill/, "styles primary model price badges");
+assert.match(css, /\.rival-price/, "styles rival model price badges");
+assert.match(css, /\.price-context/, "styles the price caveat block");
+assert.doesNotMatch(rivalSection, /ราคา [0-9,]+ เยน/, "does not leave rival price notes in yen");
 
 for (const source of [
   "https://www.ofm.co.th/product/namiko-",
