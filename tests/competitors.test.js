@@ -215,20 +215,21 @@ assert.equal(elitePriceBadges.length, 5, "shows Thai-baht prices on all elite BG
 const rivalPriceCells = rivalSection.match(/<td data-price-cell>[^<]*฿[\s\S]*?<\/td>/g) ?? [];
 assert.equal(rivalPriceCells.length, 20, "adds a Thai-baht price column to every rival comparison row");
 
-assert.match(html, /ราคาที่เช็กล่าสุด:\s*15 ส\.ค\. 2026/, "states the price check date");
-assert.match(html, /เรตแปลงโดยประมาณ:\s*JPY 1 ≈ ฿0\.208/, "states the JPY conversion rate used for baht prices");
+assert.match(html, /ราคาที่เช็กล่าสุด:\s*17 ส\.ค\. 2026/, "states the price check date");
+assert.match(html, /เรตแปลงโดยประมาณ:\s*JPY 1 ≈ ฿0\.206/, "states the JPY conversion rate used for baht prices");
 assert.match(html, /EUR 1 ≈ ฿38\.316/, "states the EUR conversion rate used for baht prices");
-assert.match(html, /USD 1 ≈ ฿33\.083/, "states the USD conversion rate used for baht prices");
+assert.match(html, /USD 1 ≈ ฿33\.199/, "states the USD conversion rate used for baht prices");
 
 for (const expectedPrice of [
-  "฿611",
-  "฿687",
+  "฿576",
+  "฿888",
+  "฿970",
   "฿990",
   "฿890",
   "฿590",
   "฿650",
-  "ประมาณ ฿1,716",
-  "ประมาณ ฿3,937",
+  "ประมาณ ฿1,700",
+  "ประมาณ ฿4,283",
 ]) {
   assert.match(html, new RegExp(escapeRegExp(expectedPrice)), `keeps visible baht price ${expectedPrice}`);
 }
@@ -237,6 +238,38 @@ assert.match(css, /\.price-pill/, "styles primary model price badges");
 assert.match(css, /\.rival-price/, "styles rival model price badges");
 assert.match(css, /\.price-context/, "styles the price caveat block");
 assert.doesNotMatch(rivalSection, /ราคา [0-9,]+ เยน/, "does not leave rival price notes in yen");
+
+assert.match(html, /id="market-proof"/, "adds a market-price proof section before the final recommendation");
+const marketProof = html.match(/<section id="market-proof"[\s\S]*?<\/section>/)?.[0] ?? "";
+assert.ok(marketProof, "keeps the market proof section inspectable");
+
+const proofCards = marketProof.match(/data-proof-card/g) ?? [];
+assert.equal(proofCards.length, 6, "compares six market proof buckets, not only BGG");
+
+for (const proofPoint of [
+  "ไม่ใช่ดีที่สุดทุกด้าน",
+  "BGG AT0070",
+  "฿888",
+  "value pick",
+  "ไม่ใช่ UV-evidence winner",
+  "UVO เป็น UV-evidence winner",
+  "฿2,635-3,919",
+  "Wpc. IZA",
+  "฿1,043-1,790",
+  "Waterfront",
+  "฿712-2,958",
+  "Knirps/BLUNT",
+  "แพงกว่า BGG หลายเท่า",
+]) {
+  assert.match(marketProof, new RegExp(escapeRegExp(proofPoint)), `keeps market proof point ${proofPoint}`);
+}
+
+assert.match(script, /UVO ชนะด้านหลักฐานผ้า/, "keeps the dynamic sun verdict honest about the UV-evidence winner");
+assert.match(script, /AT0070 ยังเป็น value pick ไทย/, "keeps the dynamic sun verdict framed as a Thai-market value pick");
+
+assert.match(css, /\.market-proof-grid/, "styles the proof cards in a dedicated grid");
+assert.match(css, /\.proof-card/, "styles each proof card");
+assert.match(css, /\.proof-verdict/, "styles the proof conclusion callout");
 
 for (const source of [
   "https://www.ofm.co.th/product/namiko-",
